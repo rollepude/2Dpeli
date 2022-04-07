@@ -5,6 +5,9 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+
+    
     public float moveSpeed;
     public float jumpForce;
 
@@ -24,12 +27,15 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         theRB = GetComponent<Rigidbody2D>();
+       
     }
 
     void Update()
     {
+        
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
 
+       
         if (Input.GetKey(left))
         {
             theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
@@ -51,4 +57,5 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+
 }
