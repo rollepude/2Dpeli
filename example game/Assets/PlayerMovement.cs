@@ -6,8 +6,14 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
 
+    [SerializeField] private float speed;
+    private Rigidbody2D body;
 
-    
+    private void Awake()
+    {
+        body = GetComponent<Rigidbody2D>();
+    }
+   
     public float moveSpeed;
     public float jumpForce;
 
@@ -32,7 +38,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+
+        float horizotalInput = Input.GetAxis("Horizontal");
+        body.velocity = new Vector2(horizotalInput * speed, body.velocity.y);
+
+        //Pelaaja kääntyy ku hän liikkuu oikeelta vasemmalle
+        if (horizotalInput > 0.01f)
+            transform.localScale = new Vector3(3, 3, 1);
+        else if (horizotalInput < -0.01f)
+            transform.localScale = new Vector3(-3, 3, 1);
+
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
 
        
@@ -57,5 +72,6 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+
 
 }
