@@ -5,7 +5,7 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public Rigidbody2D rb;
     [SerializeField] private float speed;
     private Rigidbody2D body;
 
@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         float horizotalInput = Input.GetAxis("Horizontal");
         body.velocity = new Vector2(horizotalInput * speed, body.velocity.y);
 
@@ -72,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+  
 
 
 }
