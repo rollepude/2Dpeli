@@ -7,6 +7,7 @@ TagManager:
   - "j\xE4\xE4"
   - jaa
   - spike
+  - Door
   layers:
   - Default
   - TransparentFX
