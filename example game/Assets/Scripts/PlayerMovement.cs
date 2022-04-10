@@ -5,6 +5,7 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
     public Rigidbody2D rb;
     [SerializeField] private float speed;
     private Rigidbody2D body;
@@ -36,11 +37,19 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+    public void OnLanding ()
+    {
+        animator.SetBool("IsJumping", false);
+    }
+
     void Update()
     {
+        
+
         float horizotalInput = Input.GetAxis("Horizontal");
         body.velocity = new Vector2(horizotalInput * speed, body.velocity.y);
 
+        animator.SetFloat("Speed", Mathf.Abs(horizotalInput));
         //Pelaaja kääntyy ku hän liikkuu oikeelta vasemmalle
         if (horizotalInput > 0.01f)
             transform.localScale = new Vector3(3, 3, 1);
@@ -68,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(jump) && isGrounded)
         {
             theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-
+            animator.SetBool("IsJumping", true);
         }
     }
   
