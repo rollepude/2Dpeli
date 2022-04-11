@@ -7,14 +7,14 @@ public class PlayerCollision : MonoBehaviour
 	public PlayerMovement movement;     // A reference to our PlayerMovement script
 	public BoxCollider2D BoxCollider2D;
 
- //   [Header("Events")]
- //   [Space]
+	//   [Header("Events")]
+	//   [Space]
 
- //   public UnityEvent OnLandEvent;
+	//   public UnityEvent OnLandEvent;
 
- //   [System.Serializable]
- //   public class BoolEvent : UnityEvent<bool> {
-	
+	//   [System.Serializable]
+	//   public class BoolEvent : UnityEvent<bool> {
+
 	//}
 
 	//private void Awake()
@@ -25,7 +25,8 @@ public class PlayerCollision : MonoBehaviour
 	//		OnLandEvent = new UnityEvent();
 	//}
 
-		void OnCollisionEnter2D(Collision2D collisionInfo)
+
+	void OnCollisionEnter2D(Collision2D collisionInfo)
 	{
 		// We check if the object we collided with has a tag called "Obstacle".
 		if (collisionInfo.collider.tag == "spike")
