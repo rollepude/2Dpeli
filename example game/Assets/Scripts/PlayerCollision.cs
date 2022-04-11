@@ -7,23 +7,23 @@ public class PlayerCollision : MonoBehaviour
 	public PlayerMovement movement;     // A reference to our PlayerMovement script
 	public BoxCollider2D BoxCollider2D;
 
-    [Header("Events")]
-    [Space]
+ //   [Header("Events")]
+ //   [Space]
 
-    public UnityEvent OnLandEvent;
+ //   public UnityEvent OnLandEvent;
 
-    [System.Serializable]
-    public class BoolEvent : UnityEvent<bool> {
+ //   [System.Serializable]
+ //   public class BoolEvent : UnityEvent<bool> {
 	
-	}
+	//}
 
-	private void Awake()
-	{
-		rb = GetComponent<Rigidbody2D>();
+	//private void Awake()
+	//{
+	//	rb = GetComponent<Rigidbody2D>();
 
-		if (OnLandEvent == null)
-			OnLandEvent = new UnityEvent();
-	}
+	//	if (OnLandEvent == null)
+	//		OnLandEvent = new UnityEvent();
+	//}
 
 		void OnCollisionEnter2D(Collision2D collisionInfo)
 	{

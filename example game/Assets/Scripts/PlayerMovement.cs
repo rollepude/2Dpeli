@@ -37,10 +37,10 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-    public void OnLanding ()
-    {
-        animator.SetBool("IsJumping", false);
-    }
+    //public void OnLanding ()
+    //{
+    //    animator.SetBool("IsJumping", false);
+    //}
 
     void Update()
     {
@@ -79,8 +79,12 @@ public class PlayerMovement : MonoBehaviour
             theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
             animator.SetBool("IsJumping", true);
         }
+        //else
+        //{
+        //    animator.SetBool("IsJumping", false);
+        //}
     }
-  
+
 
 
 }
