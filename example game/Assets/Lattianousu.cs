@@ -18,13 +18,13 @@ public class Lattianousu : MonoBehaviour
 	}
 
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            MyAnimatorController.SetBool("Lattianousu", false);
-            MyanimatorController.SetBool("Piikkinousu", false);
-			Myanimatorcontroller.SetBool("seinänousu", false);
-		}
-    }
+  //  private void OnTriggerExit2D(Collider2D other)
+  //  {
+  //      if (other.CompareTag("Player"))
+  //      {
+  //          MyAnimatorController.SetBool("Lattianousu", false);
+  //          MyanimatorController.SetBool("Piikkinousu", false);
+		//	Myanimatorcontroller.SetBool("seinänousu", false);
+		//}
+  //  }
 }
