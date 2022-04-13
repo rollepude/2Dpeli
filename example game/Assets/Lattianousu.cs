@@ -7,6 +7,7 @@ public class Lattianousu : MonoBehaviour
 	[SerializeField] private Animator MyAnimatorController;
 	[SerializeField] private Animator MyanimatorController;
 	[SerializeField] private Animator Myanimatorcontroller;
+	[SerializeField] private Animator piikkikäännöscontroller;
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag("Player"))
@@ -14,6 +15,7 @@ public class Lattianousu : MonoBehaviour
 			MyAnimatorController.SetBool("Lattianousu", true);
 			MyanimatorController.SetBool("Piikkinousu", true);
 			Myanimatorcontroller.SetBool("seinänousu", true);
+			piikkikäännöscontroller.SetBool("käännös", true);
 		}
 	}
 

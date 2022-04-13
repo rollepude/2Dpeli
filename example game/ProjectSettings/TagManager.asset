@@ -8,6 +8,9 @@ TagManager:
   - jaa
   - spike
   - Door
+  - piikkitrigger
+  - perustrigger
+  - Trigger
   layers:
   - Default
   - TransparentFX
