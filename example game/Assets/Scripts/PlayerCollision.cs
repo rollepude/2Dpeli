@@ -6,27 +6,29 @@ public class PlayerCollision : MonoBehaviour
 	public Rigidbody2D rb;
 	public PlayerMovement movement;     // A reference to our PlayerMovement script
 	public BoxCollider2D BoxCollider2D;
+	public Animator animator;
 
-	//   [Header("Events")]
-	//   [Space]
+    //[Header("Events")]
+    //[Space]
 
-	//   public UnityEvent OnLandEvent;
+    //public UnityEvent OnLandEvent;
 
-	//   [System.Serializable]
-	//   public class BoolEvent : UnityEvent<bool> {
+    //[System.Serializable]
+    //public class BoolEvent : UnityEvent<bool>
+    //{
 
-	//}
+    //}
 
-	//private void Awake()
-	//{
-	//	rb = GetComponent<Rigidbody2D>();
+    //private void Awake()
+    //{
+    //    rb = GetComponent<Rigidbody2D>();
 
-	//	if (OnLandEvent == null)
-	//		OnLandEvent = new UnityEvent();
-	//}
+    //    if (OnLandEvent == null)
+    //        OnLandEvent = new UnityEvent();
+    //}
 
 
-	void OnCollisionEnter2D(Collision2D collisionInfo)
+    void OnCollisionEnter2D(Collision2D collisionInfo)
 	{
 		// We check if the object we collided with has a tag called "Obstacle".
 		if (collisionInfo.collider.tag == "spike")
@@ -34,14 +36,14 @@ public class PlayerCollision : MonoBehaviour
 
             movement.enabled = false;
         }
+		//if (collisionInfo.collider.tag == "spike")
+		//{
+
+		//	BoxCollider2D.enabled = false;
+		//}
 		if (collisionInfo.collider.tag == "spike")
 		{
-
-			BoxCollider2D.enabled = false;
-		}
-		if (collisionInfo.collider.tag == "jaa")
-		{
-			rb.AddForce(new Vector2(moveSpeed, 1));
+			animator.enabled = false;
 
 		}
 	}

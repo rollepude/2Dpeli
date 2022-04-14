@@ -1,24 +1,48 @@
+
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
 
+	public Transform target;
 
-    Transform CamTransform;
-    public Transform Player;
+	public float smoothSpeed = 0.125f;
+	public Vector3 offset;
 
-    void Start()
-    {
-        CamTransform = Camera.main.transform;
-    }
+	void FixedUpdate()
+	{
+		Vector3 desiredPosition = target.position + offset;
+		Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+		transform.position = smoothedPosition;
 
-    void Update()
-    {
-
-        CamTransform.position = new Vector3(CamTransform.position.x, Player.position.y, CamTransform.position.z);
-    }
+		
+	}
 
 }
+
+
+
+//using UnityEngine;
+
+//public class CameraController : MonoBehaviour
+//{
+
+
+//    Transform CamTransform;
+//    public Transform Player;
+
+//    void Start()
+//    {
+//        CamTransform = Camera.main.transform;
+//    }
+
+//    void Update()
+//    {
+
+//        CamTransform.position = new Vector3(CamTransform.position.x, Player.position.y, CamTransform.position.z);
+//    }
+
+//}
 
 
 //using UnityEngine;

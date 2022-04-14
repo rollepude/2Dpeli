@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D theRB;
 
     public Transform groundCheckPoint;
+    
     public float groundCheckRadius;
     public LayerMask whatIsGround;
 
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-    //public void OnLanding ()
+    //public void OnLanding()
     //{
     //    animator.SetBool("IsJumping", false);
     //}
@@ -55,10 +56,14 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(3, 3, 1);
         else if (horizotalInput < -0.01f)
             transform.localScale = new Vector3(-3, 3, 1);
-
+        
+        bool wasOnGround = isGrounded;
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
-
-       
+        
+        if (!wasOnGround && isGrounded)
+        {
+            animator.SetBool("IsJumping", false);
+        }
         if (Input.GetKey(left))
         {
             theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
