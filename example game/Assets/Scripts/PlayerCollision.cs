@@ -27,14 +27,16 @@ public class PlayerCollision : MonoBehaviour
     //        OnLandEvent = new UnityEvent();
     //}
 
-
+    public AudioSource playSound;
+    public AudioSource pauseSound;
     void OnCollisionEnter2D(Collision2D collisionInfo)
 	{
 		// We check if the object we collided with has a tag called "Obstacle".
 		if (collisionInfo.collider.tag == "spike")
 		{
-
+            playSound.Play();
             movement.enabled = false;
+            pauseSound.Pause();
         }
         //if (collisionInfo.collider.tag == "spike")
         //{
@@ -45,7 +47,7 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.transform.tag == "spike")
         {
             PlayerManager.isGameOver = true;
-           /* gameObject.SetActive(false)*/;
+            gameObject.SetActive(false);
         }
         if (collisionInfo.collider.tag == "spike")
 		{

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    public AudioSource playSound;
     public int coinValue = 1;
    private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             ScoreManager.instance.ChangeScore(coinValue);
+            playSound.Play();
         }
     }
 }
