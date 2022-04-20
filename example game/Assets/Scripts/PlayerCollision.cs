@@ -36,16 +36,23 @@ public class PlayerCollision : MonoBehaviour
 
             movement.enabled = false;
         }
-		//if (collisionInfo.collider.tag == "spike")
-		//{
+        //if (collisionInfo.collider.tag == "spike")
+        //{
 
-		//	BoxCollider2D.enabled = false;
-		//}
-		if (collisionInfo.collider.tag == "spike")
+        //	BoxCollider2D.enabled = false;
+        //}
+
+        if (collisionInfo.transform.tag == "spike")
+        {
+            PlayerManager.isGameOver = true;
+           /* gameObject.SetActive(false)*/;
+        }
+        if (collisionInfo.collider.tag == "spike")
 		{
 			animator.enabled = false;
 
 		}
 	}
+ 
 
 }
