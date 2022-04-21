@@ -5,6 +5,7 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     public Animator animator;
     public Rigidbody2D rb;
     [SerializeField] private float speed;
@@ -73,12 +74,18 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(left))
         {
+           
             theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
+           
         }
+
+       
+
         else if (Input.GetKey(right))
         {
+           
             theRB.velocity = new Vector2(moveSpeed, theRB.velocity.y);
-
+            
         }
         else
         {

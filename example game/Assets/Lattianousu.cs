@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Lattianousu : MonoBehaviour
 {
+	public AudioSource lattia;
+	public AudioSource nauru;
 	[SerializeField] private Animator MyAnimatorController;
 	[SerializeField] private Animator MyanimatorController;
 	[SerializeField] private Animator Myanimatorcontroller;
@@ -12,10 +14,13 @@ public class Lattianousu : MonoBehaviour
 	{
 		if (other.CompareTag("Player"))
 		{
+			lattia.Play();
+			nauru.Play();
 			MyAnimatorController.SetBool("Lattianousu", true);
 			MyanimatorController.SetBool("Piikkinousu", true);
 			Myanimatorcontroller.SetBool("seinänousu", true);
 			piikkikäännöscontroller.SetBool("käännös", true);
+			gameObject.SetActive(false);
 		}
 	}
 
