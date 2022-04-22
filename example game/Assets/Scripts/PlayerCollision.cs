@@ -26,7 +26,7 @@ public class PlayerCollision : MonoBehaviour
     //    if (OnLandEvent == null)
     //        OnLandEvent = new UnityEvent();
     //}
-
+    public AudioSource Levelcomplete;
     public AudioSource playSound;
     public AudioSource pauseSound;
     void OnCollisionEnter2D(Collision2D collisionInfo)
@@ -54,7 +54,18 @@ public class PlayerCollision : MonoBehaviour
 			animator.enabled = false;
 
 		}
-	}
+        if (collisionInfo.collider.tag == "j‰‰dytys")
+        {
+            animator.SetBool("IsJumping", false);
+            animator.SetFloat("Speed", 0);
+            
+            animator.ResetTrigger("Attack");
+            
+            movement.enabled = false;
+            pauseSound.Pause();
+            Levelcomplete.Play();
+        }
+    }
  
 
 }
