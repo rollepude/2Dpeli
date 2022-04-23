@@ -34,4 +34,6 @@ public class PlayerManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    
 }

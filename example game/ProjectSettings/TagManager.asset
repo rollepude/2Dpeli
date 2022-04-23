@@ -17,7 +17,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Enemy
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: "sein\xE4"
     uniqueID: 2342296465
+    locked: 0
+  - name: Player
+    uniqueID: 1054437033
     locked: 0
