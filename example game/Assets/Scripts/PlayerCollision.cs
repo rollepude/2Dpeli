@@ -36,6 +36,7 @@ public class PlayerCollision : MonoBehaviour
 		{
             playSound.Play();
             movement.enabled = false;
+            
             pauseSound.Pause();
         }
         //if (collisionInfo.collider.tag == "spike")
