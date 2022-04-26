@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += coinValue;
         text.text = "X" + score.ToString();
-        if (score == 54)
+        if (score == 55)
         {
             animator.SetBool("alas", true);
             //gameObj.SetActive(false);
