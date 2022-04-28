@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    public GameObject enemy;
+    public Animator animator;
+    public AudioSource pauseSound;
+    public AudioSource playSound;
+    public AudioSource hitSound;
     public int maxHealth = 100;
     int currentHealth;
     void Start()
@@ -14,7 +18,8 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
+        hitSound.Play();
+        animator.SetTrigger("Hurt");
         if (currentHealth <= 0)
         {
             Die();
@@ -22,12 +27,15 @@ public class PlayerHealth : MonoBehaviour
     }
     void Die()
     {
-
-
-        Debug.Log("Enemy died");
-
-        GetComponent<Collider2D>().enabled = false;
+        gameObject.SetActive(false);
+       
         this.enabled = false;
-      
+        enemy.SetActive(false);
+        animator.enabled = false;
+        pauseSound.Pause();
+        playSound.Play();
+        Debug.Log("Enemy died");
+        PlayerManager.isGameOver = true;
+
     }
 }

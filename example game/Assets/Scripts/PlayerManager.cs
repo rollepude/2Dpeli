@@ -24,6 +24,15 @@ public class PlayerManager : MonoBehaviour
         {
             gameOverScreen.SetActive(true);
         }
+
+     
+        
+            if (Input.GetKey("escape"))
+            {
+           
+                Application.Quit();
+            }
+        
     }
     public void ReplayLevel()
     {

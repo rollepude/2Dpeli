@@ -8,24 +8,7 @@ public class PlayerCollision : MonoBehaviour
 	public BoxCollider2D BoxCollider2D;
 	public Animator animator;
 
-    //[Header("Events")]
-    //[Space]
-
-    //public UnityEvent OnLandEvent;
-
-    //[System.Serializable]
-    //public class BoolEvent : UnityEvent<bool>
-    //{
-
-    //}
-
-    //private void Awake()
-    //{
-    //    rb = GetComponent<Rigidbody2D>();
-
-    //    if (OnLandEvent == null)
-    //        OnLandEvent = new UnityEvent();
-    //}
+    
     public AudioSource Levelcomplete;
     public AudioSource playSound;
     public AudioSource pauseSound;
