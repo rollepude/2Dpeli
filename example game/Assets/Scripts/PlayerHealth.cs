@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    
     public GameObject enemy;
     public Animator animator;
     public AudioSource pauseSound;
@@ -22,11 +23,15 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("Hurt");
         if (currentHealth <= 0)
         {
-            Die();
+           
+            animator.SetBool("Dead", true);
+
+           Die();
         }
     }
     void Die()
     {
+        
         gameObject.SetActive(false);
        
         this.enabled = false;
