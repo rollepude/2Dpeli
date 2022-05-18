@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class PlayerCollision : MonoBehaviour
 {
-	public float moveSpeed = 5;
+	
 	public Rigidbody2D rb;
 	public PlayerMovement movement;     // A reference to our PlayerMovement script
 	public BoxCollider2D BoxCollider2D;

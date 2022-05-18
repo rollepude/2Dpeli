@@ -13,6 +13,7 @@ TagManager:
   - Trigger
   - Coins
   - "j\xE4\xE4dytys"
+  - enemyfollow
   layers:
   - Default
   - TransparentFX
