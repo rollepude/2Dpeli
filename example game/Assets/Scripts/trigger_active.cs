@@ -11,7 +11,7 @@ public class trigger_active : MonoBehaviour
 	
 	void Start()
     {
-		Enemy.SetActive(false);
+        Enemy.SetActive(false);
     }
 	
 	
