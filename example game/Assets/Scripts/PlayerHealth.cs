@@ -23,15 +23,14 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("Hurt");
         if (currentHealth <= 0)
         {
-           
-            animator.SetBool("Dead", true);
 
+           
            Die();
         }
     }
     void Die()
     {
-        
+        PlayerManager.isGameOver = true;
         gameObject.SetActive(false);
        
         this.enabled = false;

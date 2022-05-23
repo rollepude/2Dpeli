@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    
+    public BoxCollider2D Box;
     public AudioSource enemykuolema;
     public Animator animator;
     public Animator attackanimator;
@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        Box.enabled = false;
     }
     public void TakeDamage(int damage)
     {
@@ -32,15 +33,16 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("Hurt");
         if(currentHealth <= 0)
         {
+        
             Die();
         }
     }
    void Die()
     {
-        enemykuolema.Play();
+       
         Debug.Log("Enemy died");
         animator.SetBool("IsDead", true);
-      
+        Box.enabled = true;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         dooranimator.SetBool("kuolema", true);

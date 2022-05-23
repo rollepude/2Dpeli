@@ -6,7 +6,7 @@ public class trigger_active : MonoBehaviour
 {
     [SerializeField] private Animator MyAnimatorController;
 	public AudioSource ovi;
-	public AudioSource nauru;
+	//public AudioSource nauru;
 	public GameObject Enemy;
 	
 	void Start()
@@ -23,7 +23,7 @@ public class trigger_active : MonoBehaviour
 			MyAnimatorController.SetBool("kiinni", true);
 			ovi.Play();
 			Enemy.SetActive(true);
-			nauru.Play();
+			//nauru.Play();
 			gameObject.SetActive(false);
 		}
 	}
