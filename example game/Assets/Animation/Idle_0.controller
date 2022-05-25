@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215914b2bda936242861b56541dddcfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 20
   attackRange: 5.26
 --- !u!1101 &-4292843416204656899
 AnimatorStateTransition:
@@ -79,7 +79,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -3155804417978942449}
-    m_Position: {x: 20, y: 100, z: 0}
+    m_Position: {x: 20, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7720976511399228911}
     m_Position: {x: 270, y: 100, z: 0}
