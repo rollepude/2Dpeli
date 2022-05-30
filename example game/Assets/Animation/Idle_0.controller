@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215914b2bda936242861b56541dddcfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 7
   attackRange: 5.26
 --- !u!1101 &-4292843416204656899
 AnimatorStateTransition:
